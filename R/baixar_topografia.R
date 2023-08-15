@@ -42,3 +42,6 @@ raster_combinado <- do.call(
   terra::mosaic,
   args = c(lista_rasters, fun = "mean")
 )
+raster_combinado <- terra::crop(raster_combinado, bbox)
+
+terra::writeRaster(raster_combinado, "data/topografia.tif", overwrite = TRUE)
