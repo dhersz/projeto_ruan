@@ -24,8 +24,8 @@ responses <- mapply(
     httr::GET(
       url,
       httr::authenticate(
-        Sys.getenv("EARTHDATA_LOGIN"),
-        Sys.getenv("EARTHDATA_PASS")
+        Sys.getenv("EARTHDATA_LOGIN_DANI"),
+        Sys.getenv("EARTHDATA_PASS_DANI")
       ),
       httr::write_disk(out, overwrite = TRUE),
       httr::progress()
